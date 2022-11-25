@@ -1,0 +1,10 @@
+@media only screen and (max-width: 550px) {
+    .navbar {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+}

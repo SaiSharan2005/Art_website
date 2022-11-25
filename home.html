@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--https://karthikesharts.000webhostapp.com/home.html-->
+
+<!--this is other his first website https://mpv7z7wzizrj7wvx87vckw.on.drv.tw/website/karthik.html-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Roboto&display=swap" rel="stylesheet">
+    <title>Karthikesh Art's</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/soma kartikesh.jpg" alt="Logo" width="50px">
+            <p>Karthikesh Art's</p>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="art.html">Art's</a></li>
+            <li><a href="About.html">About us</a></li>
+        </ul>
+    </nav>
+    <div class="photo">
+        <img src="img/pic1.jpg" alt="" width="150px">
+    </div>
+    <br>
+    <div id="container">
+        <div id="text"></div>
+        <div id="cursor"></div>
+    </div>
+
+
+    <script>// List of sentences
+        var _CONTENT = [
+            "Hi, I am Karthikesh ",
+            "I have made some drawing",
+            "You can checkout below",
+            "You can follow me on instagram:- soma_karthikesh"
+        ];
+
+        // Current sentence being processed
+        var _PART = 0;
+
+        // Character number of the current sentence being processed 
+        var _PART_INDEX = 0;
+
+        // Holds the handle returned from setInterval
+        var _INTERVAL_VAL;
+
+        // Element that holds the text
+        var _ELEMENT = document.querySelector("#text");
+
+        // Cursor element 
+        var _CURSOR = document.querySelector("#cursor");
+
+        // Implements typing effect
+        function Type() {
+            // Get substring with 1 characater added
+            var text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX++;
+
+            // If full sentence has been displayed then start to delete the sentence after some time
+            if (text === _CONTENT[_PART]) {
+                // Hide the cursor
+                _CURSOR.style.display = 'none';
+
+                clearInterval(_INTERVAL_VAL);
+                setTimeout(function () {
+                    _INTERVAL_VAL = setInterval(Delete, 50);
+                }, 1000);
+            }
+        }
+
+        // Implements deleting effect
+        function Delete() {
+            // Get substring with 1 characater deleted
+            var text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX--;
+
+            // If sentence has been deleted then start to display the next sentence
+            if (text === '') {
+                clearInterval(_INTERVAL_VAL);
+
+                // If current sentence was last then display the first one, else move to the next
+                if (_PART == (_CONTENT.length - 1))
+                    _PART = 0;
+                else
+                    _PART++;
+
+                _PART_INDEX = 0;
+
+                // Start to display the next sentence after some time
+                setTimeout(function () {
+                    _CURSOR.style.display = 'inline-block';
+                    _INTERVAL_VAL = setInterval(Type, 100);
+                }, 200);
+            }
+        }
+
+        // Start the typing effect on load
+        _INTERVAL_VAL = setInterval(Type, 100);</script>
+
+<div class="heading">
+<h1>Art Gallery</h1>
+</div>
+
+    <div class="box">
+        <div class="box1">
+            <img src="img/img1.jpg" alt="">
+            <img src="img/img2.jpg" alt="">
+            <img src="img/img3.jpg" alt="">
+            <img src="img/img4.jpg" alt="">
+            <img src="img/img5.jpg" alt="">
+            <img src="img/img6.jpg" alt="">
+            <img src="img/img7.jpg" alt="">
+            <img src="img/img8.jpg" alt="">
+            <img src="img/img9.jpg" alt="">
+            <img src="img/img10.jpg" alt="">
+            <img src="img/img11.jpg" alt="">
+            <img src="img/img12.jpg" alt="">
+            <img src="img/img13.jpg" alt="">
+            <img src="img/img14.jpg" alt="">
+            <img src="img/img43.jpg" alt="">
+
+        </div>
+        <div class="box2">
+            <img src="img/img15.jpg" alt="">
+            <img src="img/img16.jpg" alt="">
+            <img src="img/img17.jpg" alt="">
+            <img src="img/img18.jpg" alt="">
+            <img src="img/img19.jpg" alt="">
+            <img src="img/img20.jpg" alt="">
+            <img src="img/img21.jpg" alt="">
+            <img src="img/img22.jpg" alt="">
+            <img src="img/img23.jpg" alt="">
+            <img src="img/img24.jpg" alt="">
+            <img src="img/img25.jpg" alt="">
+            <img src="img/img26.jpg" alt="">
+            <img src="img/img27.jpg" alt="">
+            <img src="img/img28.jpg" alt="">
+
+        </div>
+        <div class="box3">
+            <img src="img/img29.jpg" alt="">
+            <img src="img/img30.jpg" alt="">
+            <img src="img/img31.jpg" alt="">
+            <img src="img/img32.jpg" alt="">
+            <img src="img/img33.jpg" alt="">
+            <img src="img/img34.jpg" alt="">
+            <img src="img/img35.jpg" alt="">
+            <img src="img/img36.jpg" alt="">
+            <img src="img/img37.jpg" alt="">
+            <img src="img/img38.jpg" alt="">
+            <img src="img/img39.jpg" alt="">
+            <img src="img/img40.jpg" alt="">
+            <img src="img/img41.jpg" alt="">
+            <img src="img/img42.jpg" alt="">
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
